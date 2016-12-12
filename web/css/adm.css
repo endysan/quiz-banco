@@ -1,0 +1,23 @@
+*, *:after, *:before {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+html {
+    height: 100%;
+}
+body {
+    font-family: 'Noto', sans-serif;
+    height: 100%;
+}
+.row, .full-content, .sidebar-container {
+    height: 100%;
+}
+#form-editar, #form-excluir {
+    display:inline-block;
+}
+footer {
+    margin-top: 30px;
+    padding: 20px 10px;
+    background-color: #fefefe;
+}
