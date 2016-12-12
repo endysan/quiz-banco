@@ -33,6 +33,7 @@
         <title>Quiz - Página inicial</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <link rel="stylesheet" href="css/bootstrap.min.css"/>
         <link rel="stylesheet" href="css/main.css"/>
         <link rel="stylesheet" href="css/home.css"/>
@@ -50,17 +51,21 @@
         <div class="row">
             <div class="offset-md-2 col-md-8 quiz-desc">
                 <h1>Bem-vindo</h1>
-                <p>Aqui você poderá testar seus conhecimentos.
-                    Uma aplicação que irá te dar maior facilidade
-                    para verificar seu progresso.
+                <p>Faça o login ou crie sua conta para poder resolver testes e desafiar os seus amigos em busca de quem atinge o maior número de respostas corretas!
                 </p>
                 <form method="POST" action="prova.jsp" id="form" autocomplete="off">
-                    <div class="form-inline">
-                        <div id="div-danger" class="form-group">
-                            <input id="nm_aluno" class="form-control form-control-lg" type="text" name="nm_aluno" placeholder="Digite seu nome"/>
-                        </div>
-                        <button id="bt_submit" type="submit" class="btn btn-outline-danger btn-lg">Iniciar Teste</button>
+                   <form>
+                    <div class="input-group">
+                      <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                      <input id="id" type="text" class="form-control" name="id" placeholder="Digite seu ID">
                     </div>
+                    <div class="input-group">
+                      <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+                      <input id="password" type="password" class="form-control" name="password" placeholder="Digite sua Senha">
+                    </div>
+                       <button type="button" class="btn btn-primary btn-lg btn-block">Login</button>
+                       <button type="button" class="btn btn-default btn-lg btn-block">Criar Conta</button>
+                    
                 </form>
                 
             </div>
