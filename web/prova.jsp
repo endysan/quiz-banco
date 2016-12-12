@@ -29,7 +29,9 @@
             ArrayList<Questions> teste = Perguntas.getTeste(); 
             int questaoAtual = 0;
         %>
-
+        
+        <%@include file="./header.jsp"%> <!-- HEADER -->
+        
         <div class="container">
             
             <div class="row quiz-container">

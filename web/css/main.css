@@ -1,13 +1,12 @@
 body {
     background-image: url("../img/poke.png");
-    background-repeat: repeat;
+    background-repeat: no-repeat;
 }
 
-.quiz-desc, .estatistica, .quiz-container {
+.login, .estatistica, .quiz-container, .info-projeto {
     padding: 20px;
     border: 1px solid #c2c2c2;
     background-color: white;
-    margin-bottom: 40px;
 }
 
 .quiz-container {

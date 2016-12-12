@@ -37,68 +37,70 @@
         <link rel="stylesheet" href="css/bootstrap.min.css"/>
         <link rel="stylesheet" href="css/main.css"/>
         <link rel="stylesheet" href="css/home.css"/>
+        <link rel="stylesheet" href="css/equipe.css"/>
         <script src="js/jquery.min.js"></script>
         <script src="js/home.js"></script>
+        <script type="text/javascript" src="js/modernizr.custom.79639.js"></script>
+        
     </head>
 <body>
         
-    <nav>
-        <div class="container-fluid"></div>
-    </nav>
+    <%@include file="./header.jsp"%> <!-- HEADER -->
 
     <div class="container">
-        <% if(request.getParameter("prova") == null) { %>
         <div class="row">
-            <div class="offset-md-2 col-md-8 quiz-desc">
+        <% if(request.getParameter("login") == null) { %>
+            <div class="offset-md-2 col-md-8 login">
                 <h1>Bem-vindo</h1>
-                <p>Faça o login ou crie sua conta para poder resolver testes e desafiar os seus amigos em busca de quem atinge o maior número de respostas corretas!
+                <p>Faça o login ou crie sua conta para poder resolver testes e 
+                    desafiar os seus amigos em busca de quem atinge o maior 
+                    número de respostas corretas!
                 </p>
                 <form method="POST" action="prova.jsp" id="form" autocomplete="off">
-                   <form>
-                    <div class="input-group">
-                      <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-                      <input id="id" type="text" class="form-control" name="id" placeholder="Digite seu ID">
-                    </div>
-                    <div class="input-group">
-                      <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
-                      <input id="password" type="password" class="form-control" name="password" placeholder="Digite sua Senha">
-                    </div>
-                       <button type="button" class="btn btn-primary btn-lg btn-block">Login</button>
-                       <button type="button" class="btn btn-default btn-lg btn-block">Criar Conta</button>
-                    
+                    <form>
+                      <div class="input-group">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                        <input id="id" type="text" class="form-control" name="id" placeholder="Digite seu ID">
+                      </div>
+                      <div class="input-group">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+                        <input id="password" type="password" class="form-control" name="password" placeholder="Digite sua Senha">
+                      </div>
+                      <button id="" type="button" class="btn btn-primary btn-block">Login</button>
+                      <button id="" type="button" class="btn btn-default btn-block">Criar Conta</button>
                 </form>
                 
             </div>
         </div>
         <% } %>
         
-        <% if(request.getParameter("prova") != null) { %>
-        <div class="row">
-            <div class="offset-md-2 col-md-8 estatistica">
-                <h2>Porcentagem de acertos de <%= Aluno.getNome() %> </h2><hr>
-                <div class="esquerda">
-                <h3>Última prova: <%= Aluno.getNotaAnterior()+"%"%></h3>
-                <% if(Perguntas.getContador()==1) { %>
-                <h3>Prova feita <%= Perguntas.getContador() %> vez</h3>
-                <% } %>
-                <% if(Perguntas.getContador()>1) { %>
-                <h3>Prova feita <%= Perguntas.getContador() %> vezes</h3>
-                <% } %>
-                </div>
-                <br/>
-                <div class="direita">
-                <h3>Média: <%= Aluno.getMedia()+"%" %></h3>
-                </div>
-                
-                <div class="botoes">
-                    <form method="POST">
-                        <button type="submit" class="btn btn-outline-danger" name="sair" value="1">Sair</button>    
-                        <a class="btn btn-outline-success" href="prova.jsp">Fazer novamente</a>
-                    </form>
-                </div>
-            </div>
+        <div class="offset-md-2 col-md-8 info-projeto equipe">
+            <p>
+                Aqui fazemos provas, login e cadastros, ranking dos melhores
+                e mostramos seu desempenho de uma forma simples.
+            </p>
+            <h2>Equipe</h2>
+            <ul class="ch-grid">
+                <li>
+                    <div class="ch-item" style="background-image: url(img/adilson.png);">
+                        <div class="ch-info">
+                            <h3>Adilson</h3>
+                            <p>Desenvolvedor</p>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="ch-item" style="background-image: url(img/wenndy.jpg);">
+                        <div class="ch-info">
+                            <h3>Wenndy</h3>
+                            <p>Desenvolvedor</p>
+                        </div>
+                    </div>
+                </li>
+            </ul>
         </div>
-        <% } %>
+
+        </div>
     </div>
 
     <footer>
