@@ -79,7 +79,7 @@
                 </p>
                 <form method="POST" action="prova.jsp" id="form" autocomplete="off">
                       <div class="input-group">
-                       <span class="input-group-addon"><i class="glyphicon glyphicon-font"></i></span>
+                          <span class="input-group-addon"><i><span class="glyphicon glyphicon-font"></span></i></span>
                        <input id="id" type="text" class="form-control" name="nome" placeholder="Digite seu nome">
                       </div>
                       <div class="input-group">
@@ -97,7 +97,7 @@
             
         </div>
         <% } %>
-        
+        <div class="row">
         <div class="offset-md-2 col-md-8 info-projeto equipe">
             <p>
                 Aqui fazemos provas, login e cadastros, ranking dos melhores
