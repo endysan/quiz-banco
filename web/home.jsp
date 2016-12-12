@@ -50,11 +50,15 @@
     <div class="container">
         <div class="row">
         <% if(request.getParameter("login") == null) { %>
-            <div class="offset-md-2 col-md-8 login">
-                <h1>Bem-vindo</h1>
+        <div class="offset-md-2 col-md-8 mensagem">
+         <h1>Bem-vindo</h1>
                 <p>Faça o login ou crie sua conta para poder resolver testes e 
                     desafiar os seus amigos em busca de quem atinge o maior 
-                    número de respostas corretas!
+                    número de respostas corretas!   
+        </div>
+        
+            <div class="offset-md-2 col-md-4 login">
+                <h3>Login</h3>
                 </p>
                 <form method="POST" action="prova.jsp" id="form" autocomplete="off">
                     <form>
@@ -66,11 +70,31 @@
                         <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
                         <input id="password" type="password" class="form-control" name="password" placeholder="Digite sua Senha">
                       </div>
-                      <button id="" type="button" class="btn btn-primary btn-block">Login</button>
-                      <button id="" type="button" class="btn btn-default btn-block">Criar Conta</button>
+                        <button id="" type="button" class="btn btn-primary btn-block">Entrar</button>
                 </form>
                 
             </div>
+                  <div class="offset-md-2 col-md-4 cadastrar">
+                      <h3>Cadastrar</h3>
+                </p>
+                <form method="POST" action="prova.jsp" id="form" autocomplete="off">
+                      <div class="input-group">
+                       <span class="input-group-addon"><i class="glyphicon glyphicon-font"></i></span>
+                       <input id="id" type="text" class="form-control" name="nome" placeholder="Digite seu nome">
+                      </div>
+                      <div class="input-group">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                        <input id="id" type="text" class="form-control" name="id" placeholder="Digite um ID">
+                      </div>
+                      <div class="input-group">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+                        <input id="password" type="password" class="form-control" name="password" placeholder="Digite uma Senha">
+                      </div>
+                        <button id="" type="button" class="btn btn-default btn-block">Criar Conta</button>
+                </form>
+                
+            </div>
+            
         </div>
         <% } %>
         

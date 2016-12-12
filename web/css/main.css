@@ -3,10 +3,11 @@ body {
     background-repeat: no-repeat;
 }
 
-.login, .estatistica, .quiz-container, .info-projeto {
+.login, .estatistica, .quiz-container, .info-projeto, .cadastrar {
     padding: 20px;
     border: 1px solid #c2c2c2;
     background-color: white;
+    text-align: center;
 }
 
 .quiz-container {
@@ -32,4 +33,22 @@ body {
 }
 .botoes-navagacao {
     margin-top: 25px;
+}
+
+.cadastrar{
+    margin-left:0px;
+}
+
+.mensagem{
+    padding: 20px;
+    background-color: white;
+    text-align: center;
+}
+
+h1{
+    color: navy;
+}
+
+.ch-item{
+padding:5px;
 }
