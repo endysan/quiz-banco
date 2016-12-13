@@ -1,16 +1,12 @@
 package com.quiz;
 
-/**
- *
- * @author Uno
- */
 public class Aluno {
     private static String nome;
     private static String login;
     private static String senha;
     private static double media;
-    private static double notaAnterior;
     private static boolean adm;
+    private static Historico hist;
 
     /**
      * Responsável por zerar as variáveis da classe
@@ -18,7 +14,6 @@ public class Aluno {
     public static void limparTudo() {
         Aluno.nome = null;
         Aluno.media = 0.0;
-        Aluno.notaAnterior = 0.0;
     }   
     public static void logar(){
         
@@ -55,19 +50,19 @@ public class Aluno {
         media = aMedia;
     }
 
-    public static double getNotaAnterior() {
-        return notaAnterior;
-    }
-
-    public static void setNotaAnterior(double aNotaAnterior) {
-        notaAnterior = aNotaAnterior;
-    }
-
     public static boolean isAdm() {
         return adm;
     }
 
     public static void setAdm(boolean aAdm) {
         adm = aAdm;
+    }
+
+    public static Historico getHist() {
+        return hist;
+    }
+
+    public static void setHist(Historico aHist) {
+        hist = aHist;
     }
 }

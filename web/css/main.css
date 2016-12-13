@@ -3,7 +3,7 @@ body {
     background-repeat: no-repeat;
 }
 
-.login, .estatistica, .quiz-container, .info-projeto, .cadastrar {
+.login, .estatistica, .quiz-container, .info-projeto, .cadastrar, .comecar {
     padding: 20px;
     border: 1px solid #c2c2c2;
     background-color: white;
@@ -12,6 +12,9 @@ body {
 
 .login, .cadastrar {
     height: 270px;
+}
+.comecar {
+    width: 780px;
 }
 
 .quiz-container {

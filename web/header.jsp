@@ -10,16 +10,23 @@
       <a class="nav-link" href="ranking.jsp">Ranking</a>
     </li>
     
-    <% if (request.getParameter("isLogado") != null) { %>
-    <li class="nav-item">
-      <a class="nav-link" href="#">Histórico</a>
-    </li>
-    <% } %>
-    
     <% if (request.getParameter("isAdm") != null) { %>
     <li class="nav-item">
       <a class="nav-link" href="adm.jsp">ADM</a>
     </li>
     <% } %>
+    
+    <% if (request.getParameter("isLogado") != null) { %>
+    <li class="nav-item">
+      <a class="nav-link" href="#">Histórico</a>
+    </li>
+    <% } %>
   </ul>
+  
+    <% if (request.getParameter("isLogado") != null) { %>
+    <form class="form-inline float-md-right">
+        <button class="btn btn-outline-success" type="submit" onclick="window.location('home.jsp')">Sair</button>
+    </form>
+    <% } %>
+  
 </nav>

@@ -1,3 +1,9 @@
+<%@page import="com.quiz.Dados"%>
+<%@page import="com.quiz.Aluno"%>
+<%@page import="com.quiz.Prova"%>
+<%@page import="com.quiz.Pergunta"%>
+<%@page import="java.util.ArrayList"%>
+
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="pt-BR">
@@ -13,7 +19,7 @@
     </head>
 <body>
     <%@include file="./header.jsp"%> <!-- HEADER -->
-
+    <% ArrayList<Aluno> alunoRank = Dados.getAluno(); %>
     <div class="container">    
     
         <div class="col-md-8">
@@ -28,11 +34,13 @@
             </thead>
             
             <tbody>
-                <% for (int i = 1; i <= 1; i++) { %>
+                
+                <% for (Aluno al: alunoRank) { %>
+                <% int id = Dados.getAluno().indexOf(al); %>
                 <tr>
-                    <td>1</td>
-                    <td>adilson</td>
-                    <td>10</td>
+                    <td><%= id %></td>
+                    <td><%= al.getNome() %></td>
+                    <td><%= al.getMedia() %></td>
                 </tr>
                 <% } %>
             </tbody>

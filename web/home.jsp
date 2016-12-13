@@ -25,7 +25,6 @@
         };
         Prova.validaTeste(resposta);
         Aluno.setMedia(Prova.calculaMedia());
-        Aluno.setNotaAnterior(Prova.getResAnterior());
     }  
 %>
 <html>
@@ -49,7 +48,7 @@
 
     <div class="container">
         <div class="row">
-        <% if(request.getParameter("login") == null) { %>
+        <% if(request.getParameter("isLogado") == null) { %>
         <div class="offset-md-2 col-md-8 mensagem">
          <h1>Bem-vindo</h1>
                 <p>Faça o login ou crie sua conta para poder resolver testes e 
@@ -60,24 +59,24 @@
             <div class="offset-md-2 col-md-4 login">
                 <h3>Login</h3>
                 </p>
-                <form method="POST" action="prova.jsp" id="form" autocomplete="off">
+                <form method="POST" id="form" autocomplete="off">
                     <form>
                       <div class="input-group">
                         <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-                        <input id="id" type="text" class="form-control" name="id" placeholder="Digite seu ID">
+                        <input id="id" type="text" class="form-control" name="txt_login" placeholder="Digite seu Login">
                       </div>
                       <div class="input-group">
                         <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
-                        <input id="password" type="password" class="form-control" name="password" placeholder="Digite sua Senha">
+                        <input id="password" type="password" class="form-control" name="txt_password" placeholder="Digite sua Senha">
                       </div>
-                      <button id="" type="button" class="btn btn-primary btn-block">Entrar</button>
+                      <button id="login-quiz" type="submit" class="btn btn-primary btn-block" name="isLogado" value="true">Entrar</button>
                 </form>
                 
             </div>
                   <div class="offset-md-2 col-md-4 cadastrar">
                       <h3>Cadastrar</h3>
                 </p>
-                <form method="POST" action="prova.jsp" id="form" autocomplete="off">
+                <form method="POST" id="form" autocomplete="off">
                       <div class="input-group">
                           <span class="input-group-addon"><i><span class="glyphicon glyphicon-font"></span></i></span>
                        <input id="nome" type="text" class="form-control" name="nome" placeholder="Digite seu nome">
@@ -95,15 +94,25 @@
                           <input type="checkbox" class="form-check-input">ADM
                         </label>
                       </div>
-                      <button id="" type="button" class="btn btn-default btn-block">Criar Conta</button>
+                      <button id="" type="submit" class="btn btn-default btn-block">Criar Conta</button>
                 </form>
                 
             </div>
             
         </div>
         <% } %>
+        <% if (request.getParameter("isLogado") != null) { %>
         <div class="row">
-        <div class="offset-md-2 col-md-8 info-projeto equipe">
+            <div class="offset-md-2 col-md-4 comecar">
+                <h3>Começar o teste agora mesmo!</h3>
+                <br/>
+                <a href="prova.jsp" class="btn btn-success btn-lg">Começar Prova</a>
+            </div>
+        </div>    
+        <% } %>
+        
+        <div class="row">
+          <div class="offset-md-2 col-md-8 info-projeto equipe">
             <p>
                 Aqui fazemos provas, login e cadastros, ranking dos melhores
                 e mostramos seu desempenho de uma forma simples.

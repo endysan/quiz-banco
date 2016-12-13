@@ -16,7 +16,7 @@
     <body>
         <% 
             if(Aluno.getNome() == null || Aluno.getNome().equals("")){
-                Aluno.setNome(request.getParameter("nm_aluno"));
+                Aluno.setNome(request.getParameter("txt_login"));
             }
             ArrayList<Pergunta> teste = Prova.gerarTeste(); 
             int questaoAtual = 0;
