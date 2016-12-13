@@ -1,12 +1,12 @@
 <%@page import="com.quiz.Aluno"%>
-<%@page import="com.quiz.Perguntas"%>
-<%@page import="com.quiz.Questions"%>
+<%@page import="com.quiz.Pergunta"%>
+<%@page import="com.quiz.Prova"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 
     <% if(request.getParameter("sair") != null) {
         Aluno.limparTudo();
-        Perguntas.limparTudo();
+        Prova.limparTudo();
         response.sendRedirect(request.getRequestURI());
     }
     if (request.getParameter("prova") != null){ //Pegando os dados da pagina exibirPerguntas
@@ -23,9 +23,9 @@
             request.getParameter("9")
                 
         };
-        Perguntas.validaTeste(resposta);
-        Aluno.setMedia(Perguntas.calculaMedia());
-        Aluno.setNotaAnterior(Perguntas.getResAnterior());
+        Prova.validaTeste(resposta);
+        Aluno.setMedia(Prova.calculaMedia());
+        Aluno.setNotaAnterior(Prova.getResAnterior());
     }  
 %>
 <html>
@@ -38,7 +38,7 @@
         <link rel="stylesheet" href="css/main.css"/>
         <link rel="stylesheet" href="css/home.css"/>
         <link rel="stylesheet" href="css/equipe.css"/>
-        <script src="js/jquery.min.js"></script>
+        
         <script src="js/home.js"></script>
         <script type="text/javascript" src="js/modernizr.custom.79639.js"></script>
         
@@ -70,7 +70,7 @@
                         <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
                         <input id="password" type="password" class="form-control" name="password" placeholder="Digite sua Senha">
                       </div>
-                        <button id="" type="button" class="btn btn-primary btn-block">Entrar</button>
+                      <button id="" type="button" class="btn btn-primary btn-block">Entrar</button>
                 </form>
                 
             </div>
@@ -80,17 +80,22 @@
                 <form method="POST" action="prova.jsp" id="form" autocomplete="off">
                       <div class="input-group">
                           <span class="input-group-addon"><i><span class="glyphicon glyphicon-font"></span></i></span>
-                       <input id="id" type="text" class="form-control" name="nome" placeholder="Digite seu nome">
+                       <input id="nome" type="text" class="form-control" name="nome" placeholder="Digite seu nome">
                       </div>
                       <div class="input-group">
                         <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-                        <input id="id" type="text" class="form-control" name="id" placeholder="Digite um ID">
+                        <input id="login" type="text" class="form-control" name="login" placeholder="Digite seu login">
                       </div>
                       <div class="input-group">
                         <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
-                        <input id="password" type="password" class="form-control" name="password" placeholder="Digite uma Senha">
+                        <input id="password" type="password" class="form-control" name="password" placeholder="Digite uma senha">
                       </div>
-                        <button id="" type="button" class="btn btn-default btn-block">Criar Conta</button>
+                      <div class="form-check">
+                        <label class="form-check-label">
+                          <input type="checkbox" class="form-check-input">ADM
+                        </label>
+                      </div>
+                      <button id="" type="button" class="btn btn-default btn-block">Criar Conta</button>
                 </form>
                 
             </div>
@@ -131,6 +136,8 @@
         <div class="container-fluid"></div>
     </footer>
 
-    <script src="js/bootstrap.min.js"></script>
+    <script src="./js/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.3.7/js/tether.min.js" integrity="sha384-XTs3FgkjiBgo8qjEjBk0tGmf3wPrWtA6coPfQDfFEY8AnYJwjalXCiosYRBIBZX8" crossorigin="anonymous"></script>
+    <script src="./js/bootstrap.min.js"></script>
 </body>
 </html>

@@ -8,7 +8,8 @@
         <meta http-equiv="x-ua-compatible" content="ie=edge">
         <title>Quiz - Ranking</title>
         <!-- Bootstrap CSS -->
-        <link rel="stylesheet" href="./css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/bootstrap.min.css"/>
     </head>
 <body>
     <%@include file="./header.jsp"%> <!-- HEADER -->

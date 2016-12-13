@@ -11,7 +11,7 @@ body {
 }
 
 .login, .cadastrar {
-    height: 240px;
+    height: 270px;
 }
 
 .quiz-container {
@@ -49,10 +49,9 @@ body {
     text-align: center;
 }
 
-h1{
+h1, h2{
     color: navy;
 }
-
 .ch-item{
     padding:5px;
 }

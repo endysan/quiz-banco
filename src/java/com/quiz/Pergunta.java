@@ -1,16 +1,19 @@
 package com.quiz;
 
-/**
- *
- * @author Beto
- */
-public class Questions {
+public class Pergunta {
     
     private String pergunta;
     private String resposta;
     private String alternativa [];
 
-    public Questions(String pergunta, String resposta, String[] alternativa) {
+    /**
+     *Construtor da classe
+     * 
+     * @param pergunta O texto da pergunta
+     * @param resposta Reposta da pergunta em questão
+     * @param alternativa um array composto das alternativas da pergunta
+     */
+    public Pergunta(String pergunta, String resposta, String[] alternativa) {
         this.pergunta = pergunta;
         this.resposta = resposta;
         this.alternativa = alternativa;
