@@ -37,7 +37,7 @@
         <link rel="stylesheet" href="css/main.css"/>
         <link rel="stylesheet" href="css/home.css"/>
         <link rel="stylesheet" href="css/equipe.css"/>
-        
+        <script src="./js/jquery.min.js"></script>
         <script src="js/home.js"></script>
         <script type="text/javascript" src="js/modernizr.custom.79639.js"></script>
         
@@ -63,13 +63,19 @@
                     <form>
                       <div class="input-group">
                         <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-                        <input id="id" type="text" class="form-control" name="txt_login" placeholder="Digite seu Login">
+                        <input id="login" type="text" class="form-control" name="txt_login" placeholder="Digite seu Login">
                       </div>
                       <div class="input-group">
                         <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
-                        <input id="password" type="password" class="form-control" name="txt_password" placeholder="Digite sua Senha">
+                        <input id="senha" type="password" class="form-control" name="txt_password" placeholder="Digite sua Senha">
                       </div>
                       <button id="login-quiz" type="submit" class="btn btn-primary btn-block" name="isLogado" value="true">Entrar</button>
+                      
+                      <span id="erro" style="color: red; display:none;">Usuario ou senha incorretos</span>
+                      
+                      <% if(request.getParameter("txt_login") == "admin" && request.getParameter("txt_password") == "admin") { %>
+                        <script> window.location('home.jsp?isAdm=true&isLogado=true'); </script> 
+                      <% } %>
                 </form>
                 
             </div>
@@ -79,28 +85,29 @@
                 <form method="POST" id="form" autocomplete="off">
                       <div class="input-group">
                           <span class="input-group-addon"><i><span class="glyphicon glyphicon-font"></span></i></span>
-                       <input id="nome" type="text" class="form-control" name="nome" placeholder="Digite seu nome">
+                       <input id="cad-nome" type="text" class="form-control" name="nome" placeholder="Digite seu nome">
                       </div>
                       <div class="input-group">
                         <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-                        <input id="login" type="text" class="form-control" name="login" placeholder="Digite seu login">
+                        <input id="cad-login" type="text" class="form-control" name="login" placeholder="Digite seu login">
                       </div>
                       <div class="input-group">
                         <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
-                        <input id="password" type="password" class="form-control" name="password" placeholder="Digite uma senha">
+                        <input id="cad-senha" type="password" class="form-control" name="password" placeholder="Digite uma senha">
                       </div>
                       <div class="form-check">
                         <label class="form-check-label">
-                          <input type="checkbox" class="form-check-input">ADM
+                          <input type="checkbox" class="form-check-input" name="isAdm" value="true">ADM
                         </label>
                       </div>
-                      <button id="" type="submit" class="btn btn-default btn-block">Criar Conta</button>
+                      <button id="bt_cadastrar" type="submit" class="btn btn-default btn-block" name="isLogado" value="true">Criar Conta</button>
                 </form>
                 
             </div>
             
         </div>
         <% } %>
+        
         <% if (request.getParameter("isLogado") != null) { %>
         <div class="row">
             <div class="offset-md-2 col-md-4 comecar">
@@ -145,7 +152,7 @@
         <div class="container-fluid"></div>
     </footer>
 
-    <script src="./js/jquery.min.js"></script>
+    
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.3.7/js/tether.min.js" integrity="sha384-XTs3FgkjiBgo8qjEjBk0tGmf3wPrWtA6coPfQDfFEY8AnYJwjalXCiosYRBIBZX8" crossorigin="anonymous"></script>
     <script src="./js/bootstrap.min.js"></script>
 </body>
